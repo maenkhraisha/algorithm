@@ -1,3 +1,8 @@
+// *****************************
+// count the number of charecter 
+// in the string.
+// *****************************
+
 function charCount(str){
     let count = {}
     str = str.toLowerCase();
