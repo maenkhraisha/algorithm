@@ -7,7 +7,19 @@ function power(base,exponential){
 }
 
 
-console.log(power(2,0))
+function factorial(num){
+   if(num == 1 || num == 0) return 1;
+   return num * factorial(num-1)
+}
 
-// 2 * 2 * 2 * 2
+function productOfArray(arr){
+
+    if(arr.length == 0 )   return 1
+
+    return arr[0] * productOfArray(arr.slice(1))
+}
+
+
+
+
    
