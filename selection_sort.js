@@ -8,9 +8,9 @@ function saelectionSort(arr){
 
     let min;
     for(let i = 0 ; i < arr.length - 1 ; i++){
-        min = arr[i];
+        min = i;
         for(let j = i + 1; j < arr.length ; j++){
-            if(arr[j] < min){
+            if(arr[j] < arr[min]){
                 min = j;
             }
         }
@@ -22,4 +22,4 @@ function saelectionSort(arr){
 }
 
 
-console.log(saelectionSort([ 3 , 4 , 2 , 1 ]))
+console.log(saelectionSort([ 1 , 4 , 2 , 6, 3, 5 ]))
