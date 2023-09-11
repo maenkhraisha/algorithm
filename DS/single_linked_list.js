@@ -133,13 +133,19 @@ class SingleLinkedList {
             this.shift();
             return true;
         }
-        if(index = this.length){
+        if(index == this.length){
             this.pop();
             return true;
+        }
+        if(index > this.length - 1 ||  index < 0){
+            return false;
         }
 
         let preNode = this.get(index -1);
         let deleteNode = preNode.next;
+
+        console.log(preNode);
+        console.log(deleteNode);
 
         preNode.next = preNode.next.next;
         deleteNode.next = null;
@@ -149,17 +155,35 @@ class SingleLinkedList {
     }
 
     reverse(){
-        let current = this.head;
+  
+        
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
 
-        while(current){
-            
-            let temp = current.next;
-            current.next = temp;
-
-            current = current.next;
+        let next ; 
+        let prev = null;
+        
+        for(let i = 0; i < this.length ; i++){          
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
         }
 
         return this;
+    }
+ 
+
+    print(){
+        let curr = this.head;
+        let arr = [];
+        while(curr){
+            arr.push(curr.val)
+            curr = curr.next;
+        }
+
+        console.log(arr);
     }
 }
 
@@ -171,6 +195,7 @@ list.push("2");
 list.push("3");
 list.push("4");
 
-list.remove(4);
 
-list.traverse();
+list.reverse();
+
+list.print();
