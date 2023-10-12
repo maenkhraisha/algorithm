@@ -144,8 +144,6 @@ class SingleLinkedList {
         let preNode = this.get(index -1);
         let deleteNode = preNode.next;
 
-        console.log(preNode);
-        console.log(deleteNode);
 
         preNode.next = preNode.next.next;
         deleteNode.next = null;
